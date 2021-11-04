@@ -62,14 +62,10 @@ public class Main {
             {
                 System.out.println("You have ordered a " + size + " margherita pizza. Price: £" + totalPrice);
                 break;
-            }
-
-            if (topInput.equals("none") || topInput.equals("end") || topInput.equals("no") ) {
+            } else if (topInput.equals("none") || topInput.equals("end") || topInput.equals("no") ) {
                 System.out.println("You have ordered a " + size + " pizza with" + totalTop + ". Price: £" + totalPrice);
                 break;
-            }
-
-            if (   topInput.equals("extra cheese")
+            } else if (   topInput.equals("extra cheese")
                     || topInput.equals("cheese")
                     || topInput.equals("pepperoni")
                     || topInput.equals("mushroom")
