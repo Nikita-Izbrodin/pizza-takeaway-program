@@ -65,7 +65,7 @@ public class Main {
             } else if (topInput.equals("none") || topInput.equals("end") || topInput.equals("no") ) {
                 System.out.println("You have ordered a " + size + " pizza with" + totalTop + ". Price: £" + totalPrice);
                 break;
-            } else if (   topInput.equals("extra cheese")
+            } else if (topInput.equals("extra cheese")
                     || topInput.equals("cheese")
                     || topInput.equals("pepperoni")
                     || topInput.equals("mushroom")
@@ -98,27 +98,25 @@ public class Main {
             if (topInput.equals("none") || topInput.equals("end") || topInput.equals("no") ) {
                 System.out.println("You have ordered a " + size + " pizza with" + totalTop + ". Price: £" + totalPrice);
                 break;
-
-                if (topInput.equals("extra cheese")
-                        || topInput.equals("cheese")
-                        || topInput.equals("pepperoni")
-                        || topInput.equals("mushroom")
-                        || topInput.equals("mushrooms")
-                        || topInput.equals("sausage")
-                        || topInput.equals("sausages")
-                        || topInput.equals("onion")
-                        || topInput.equals("onions")
-                        || topInput.equals("olive")
-                        || topInput.equals("olives")
-                        || topInput.equals("pepper")
-                        || topInput.equals("peppers")
+            } else if (  topInput.equals("extra cheese")
+                || topInput.equals("cheese")
+                || topInput.equals("pepperoni")
+                || topInput.equals("mushroom")
+                || topInput.equals("mushrooms")
+                || topInput.equals("sausage")
+                || topInput.equals("sausages")
+                || topInput.equals("onion")
+                || topInput.equals("onions")
+                || topInput.equals("olive")
+                || topInput.equals("olives")
+                || topInput.equals("pepper")
+                || topInput.equals("peppers")
                 ) {
+                    totalPrice = totalPrice + (float) 1.25;
                     totalTop = totalTop + " " + topInput;
                     System.out.println("Current toppings:" + totalTop);
                 } else {
                     System.out.println("This topping is not available, please enter an available topping.");
-                    freeTop++;
-                }
             }
         }
     }
