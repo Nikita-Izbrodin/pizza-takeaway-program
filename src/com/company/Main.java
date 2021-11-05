@@ -1,19 +1,19 @@
 package com.company;
 
-import java.util.*;
+import java.util.*; // imports
 
 public class Main {
 
     public static void main(String[] args) {
 	// write your code here
 
-        String totalTop = "";
-        String topInput;
-        int freeTop;
-        boolean loop = true;
-        Scanner input = new Scanner(System.in);
-        String size;
-        float totalPrice = (float) 0;
+        String totalTop = ""; // will hold the string of the toppings that the user has
+        String topInput; // will hold the input of the user when asked for a topping
+        int freeTop; // stores how many free toppings the user has left
+        boolean loop = true; // variable used to run a loop
+        Scanner input = new Scanner(System.in); // scanner object called input
+        String size; // stores the size of the pizza. small/medium/large
+        float totalPrice = 0.0f; // holds the total price of the pizza. Pizza size + toppings
 
         do {
 
@@ -21,17 +21,17 @@ public class Main {
             size = input.nextLine();
             size = size.toLowerCase(Locale.ROOT);
 
-            if ( size.equals("s") || size.equals("small") ) {
+            if ( size.equals("s") || size.equals("small") || size.equals("£7.99") || size.equals("£799") || size.equals("7.99") || size.equals("799")) {
                 totalPrice = totalPrice + (float) 7.99;
                 size = "small";
                 break;
             }
-            if ( size.equals("m") || size.equals("medium") ) {
+            if ( size.equals("m") || size.equals("medium") || size.equals("£10.99") || size.equals("£1099") || size.equals("10.99") || size.equals("1099")) {
                 totalPrice = totalPrice + (float) 10.99;
                 size = "medium";
                 break;
             }
-            if ( size.equals("l") || size.equals("large") ) {
+            if ( size.equals("l") || size.equals("large") || size.equals("£13.99") || size.equals("£1399") || size.equals("13.99") || size.equals("1399") ) {
                 totalPrice = totalPrice + (float) 13.99;
                 size = "large";
                 break;
@@ -57,7 +57,7 @@ public class Main {
             if (
                ( topInput.equals("none") || topInput.equals("end") || topInput.equals("no") )
                &&
-               (freeTop == (int) 2)
+               (freeTop == 2)
                )
             {
                 System.out.println("You have ordered a " + size + " margherita pizza. Price: £" + totalPrice);
@@ -88,6 +88,16 @@ public class Main {
             }
         }
 
+        //HashMap<String, Float> toppings = new HashMap<String, Float>();
+        //toppings.put("extra cheese", 1.2f);
+
+        // get user input
+        // toppings.get(what they put,
+
+        // true = true
+        // false = null
+        // if (toppings.get("extra cheese") == )
+
         while (loop) {
             System.out.println("The available toppings are: extra cheese, pepperoni, mushroom, sausage, onion, olives, pepper. (Type 'none' or 'end' to checkout.)");
             System.out.println("Any topping costs £1.25");
@@ -96,21 +106,21 @@ public class Main {
             topInput = topInput.toLowerCase(Locale.ROOT);
 
             if (topInput.equals("none") || topInput.equals("end") || topInput.equals("no") ) {
-                System.out.println("You have ordered a " + size + " pizza with" + totalTop + ". Price: £" + totalPrice);
+                System.out.printf("You have ordered a %s pizza with %s: Price: £%.2f\n", size, totalTop, totalPrice);
                 break;
-            } else if (  topInput.equals("extra cheese")
-                || topInput.equals("cheese")
-                || topInput.equals("pepperoni")
-                || topInput.equals("mushroom")
-                || topInput.equals("mushrooms")
-                || topInput.equals("sausage")
-                || topInput.equals("sausages")
-                || topInput.equals("onion")
-                || topInput.equals("onions")
-                || topInput.equals("olive")
-                || topInput.equals("olives")
-                || topInput.equals("pepper")
-                || topInput.equals("peppers")
+            } else if (topInput.equals("extra cheese")
+                    || topInput.equals("cheese")
+                    || topInput.equals("pepperoni")
+                    || topInput.equals("mushroom")
+                    || topInput.equals("mushrooms")
+                    || topInput.equals("sausage")
+                    || topInput.equals("sausages")
+                    || topInput.equals("onion")
+                    || topInput.equals("onions")
+                    || topInput.equals("olive")
+                    || topInput.equals("olives")
+                    || topInput.equals("pepper")
+                    || topInput.equals("peppers")
                 ) {
                     totalPrice = totalPrice + (float) 1.25;
                     totalTop = totalTop + " " + topInput;
